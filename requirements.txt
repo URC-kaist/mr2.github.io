@@ -1,0 +1,5 @@
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0
+sphinx-design==0.5.0
+sphinxcontrib-video==0.1.0
+sphinxcontrib-youtube==0.1.0
