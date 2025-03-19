@@ -1,0 +1,31 @@
+name: "Building website"
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          path: source
+      - uses: actions/checkout@master
+        with:
+          path: generated
+          repository: jhwangbo/railabWebsiteGenerated
+          token: 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
+      - name: build website
+        run: |
+          pip install sphinx sphinx_theme sphinx_design sphinx_rtd_theme sphinxcontrib-video sphinxcontrib-youtube
+          make html
+          cp -r _build/html/* generated
+          cd generated
+          pwd
+          ls
+          git config --global user.email "jemin.hwangbo@gmail.com"
+          git config --global user.name "Jemin Hwangbo"
+          git add -A
+          git commit -m "update"
+          git push origin master
+          pwd
