@@ -101,3 +101,22 @@
     font-size: 0.9em;
     color: #444;
 }
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-item img {
+  height: 100px; /* 모든 로고의 높이를 50px로 통일 */
+  width: auto; /* 가로 비율은 자동으로 조정 */
+  padding: 10px;
+}
