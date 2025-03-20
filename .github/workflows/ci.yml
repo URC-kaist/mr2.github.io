@@ -27,5 +27,5 @@ jobs:
           git config --global user.name "MOSW626"
           git add -A
           git commit -m "update"
-          git push origin master
+          git push origin main
           pwd
