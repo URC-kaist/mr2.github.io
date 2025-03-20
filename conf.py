@@ -36,4 +36,4 @@ html_css_files = [
 
 # -- Logo configuration -----------------------------------------------------
 html_logo = 'urc.png'
-html_favicon = '_static/images/favicon.ico'
+html_favicon = 'urc.png'
