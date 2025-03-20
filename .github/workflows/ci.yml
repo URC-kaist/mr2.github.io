@@ -17,6 +17,7 @@ jobs:
           path: generated
           repository: URC-kaist/mr2.github.io
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: gh-pages
       - name: build website
         run: |
           pip install sphinx sphinx_theme sphinx_design sphinx_rtd_theme sphinxcontrib-video sphinxcontrib-youtube
@@ -31,4 +32,4 @@ jobs:
           git add .
           git status
           git commit -m "update website content"
-          git push origin main
+          git push origin gh-pages
