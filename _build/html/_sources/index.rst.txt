@@ -102,7 +102,7 @@ Our Work Video
                 </a>
             </div>
             <div class="grid-item">
-                <a href="https://kaist.ac.kr/" target="_blank">
+                <a href="https://github.com/URC-kaist" target="_blank">
                     <img src="_static/_images/urc.png" class="grid-item">
                 </a>
             </div>
