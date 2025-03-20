@@ -3,7 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 또는 master
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -30,6 +31,7 @@ jobs:
       - name: Build documentation
         run: |
           make html
+          ls -la _build/html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -37,8 +39,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
           force_orphan: true
-          commit_message: ${{ github.event.head_commit.message }}
-          full_commit_message: ${{ github.event.head_commit.message }}
+          commit_message: "Update website content [skip ci]"
           enable_jekyll: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
