@@ -33,3 +33,7 @@ html_static_path = ['_static']
 html_css_files = [
     'style.css',
 ]
+
+# -- Logo configuration -----------------------------------------------------
+html_logo = 'urc.png'
+html_favicon = '_static/images/favicon.ico'
