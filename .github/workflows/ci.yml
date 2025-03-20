@@ -21,13 +21,14 @@ jobs:
         run: |
           pip install sphinx sphinx_theme sphinx_design sphinx_rtd_theme sphinxcontrib-video sphinxcontrib-youtube
           make html
-          cp -r _build/html/* generated
+          ls -la _build/html
+          rm -rf generated/*
+          cp -r _build/html/* generated/
           cd generated
-          pwd
-          ls
+          ls -la
           git config --global user.email "ays6533@naver.com"
           git config --global user.name "MOSW626"
           git add .
-          git commit -m "update"
+          git status
+          git commit -m "update website content"
           git push origin main
-          pwd
