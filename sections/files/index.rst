@@ -1,10 +1,9 @@
-Documentation
+Files
 =============
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   
-   Documentation_2025
-   Documentation_2026
+   Files_2025
+   Files_2026
