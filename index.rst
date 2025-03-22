@@ -14,7 +14,7 @@ Welcome to URC-MR2!
    sections/members/index
    sections/rover/index
    sections/gallery/index
-   sections/documentation/index
+   sections/files/index
 
 .. only:: html
 
@@ -122,21 +122,3 @@ Our Work Video
     </div>
 
 |
-
-
-
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-   :caption: Contents:
-
-   sections/research
-   sections/robots
-   sections/members
-   sections/news
-   sections/publication
-   sections/projects
-   sections/software
-   sections/education
-   sections/openpositions
