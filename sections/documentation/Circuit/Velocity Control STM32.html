@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velocity Control STM32 &mdash; URC-MR2 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=82ea6441" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Manipulator" href="../Manipulator/Manipulator.html" />
+    <link rel="prev" title="Circuit" href="Circuit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            URC-MR2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../what_is_urc.html">What is URC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../members/index.html">Members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rover/index.html">Rover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/index.html">Gallery</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Documentation_2025.html">Documentation_2025</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Circuit.html">Circuit</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Velocity Control STM32</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Manipulator/Manipulator.html">Manipulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Science/Science.html">Science</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">URC-MR2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../Documentation_2025.html">Documentation_2025</a></li>
+          <li class="breadcrumb-item"><a href="Circuit.html">Circuit</a></li>
+      <li class="breadcrumb-item active">Velocity Control STM32</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/sections/documentation/Circuit/Velocity Control STM32.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="velocity-control-stm32">
+<h1>Velocity Control STM32<a class="headerlink" href="#velocity-control-stm32" title="Link to this heading"></a></h1>
+<p>For more details about the Velocity Control for STM32, refer to the Notion page:</p>
+<p><a class="reference external" href="https://www.notion.so/mrurc/Velocity-control-stm32-60fa8861a17d4f1194d312a2be62e80e">Velocity Control STM32 기능 및 통신</a></p>
+<section id="id2">
+<h2>기본 설정<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>baudrate</strong>: 921600</p></li>
+<li><p><strong>CRC</strong>: CRC32, IO reflected, mask=0x000…</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>이 디렉토리는 STM32 기반의 Velocity Control 기능을 구현한 펌웨어와 관련된 자료를 포함합니다.
+본 시스템은 UART 통신을 통해 다양한 명령을 수신하고, PID 제어를 기반으로 모터의 속도 및 브레이크를 제어하도록 설계되었습니다.</p>
+</div>
+</section>
+<section id="id3">
+<h2>주요 기능<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>UART 기반 통신</strong></p>
+<ul class="simple">
+<li><p>외부 시스템과 UART를 통해 데이터를 주고받으며, 다양한 명령어 모드 처리:</p>
+<ul>
+<li><p><strong>INIT_STATE</strong>: 시스템 초기화</p></li>
+<li><p><strong>SET_SPEED</strong>: 모터 속도 설정</p></li>
+<li><p><strong>CURRENT_SPEED</strong>: 현재 모터 속도 전송</p></li>
+<li><p><strong>SET_BRAKE</strong>: 브레이크 설정</p></li>
+<li><p><strong>SET_PID</strong>: PID 파라미터 설정</p></li>
+<li><p><strong>CURRENT_PID</strong>: 현재 PID 파라미터 전송</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>CRC 기반 패킷 검증</strong></p>
+<ul class="simple">
+<li><p>UART로 수신된 데이터는 CRC32를 통해 무결성 검증을 수행합니다 (input, output reflected).</p></li>
+<li><p>CRC 검증 실패 시 오류 메시지를 전송하여 문제를 처리합니다.</p></li>
+</ul>
+</li>
+<li><p><strong>PID 제어</strong></p>
+<ul class="simple">
+<li><p>각 바퀴에 대해 PID 제어를 수행하여 속도 제어의 정확성을 향상시킵니다.</p></li>
+<li><p><strong>Kp</strong>, <strong>Ki</strong>, <strong>Kd</strong>, <strong>Ka</strong> 파라미터를 설정 및 읽기 가능합니다.</p></li>
+</ul>
+</li>
+<li><p><strong>브레이크 및 속도 제어</strong></p>
+<ul class="simple">
+<li><p>특정 ID 또는 모든 모터의 속도 설정.</p></li>
+<li><p>브레이크 제어를 통해 안전한 정지 동작 수행.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h2>코드 구성 요소<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>주요 파일은 다음과 같습니다:</p>
+<ol class="arabic simple">
+<li><p><strong>UART_handler.cpp</strong></p>
+<ul class="simple">
+<li><p>UART 데이터 수신 및 패킷 파싱 처리.</p></li>
+<li><p>다양한 모드의 명령어 처리 및 데이터 전송 기능 포함.</p></li>
+</ul>
+</li>
+<li><p><strong>Drive_system.cpp</strong></p>
+<ul class="simple">
+<li><p>PID 기반 속도 및 브레이크 제어 구현.</p></li>
+<li><p>모터 속도 측정 및 제어 로직 포함.</p></li>
+</ul>
+</li>
+<li><p><strong>real_main.cpp</strong></p>
+<ul class="simple">
+<li><p>메인 진입점으로 시스템 초기화 및 루프 동작을 포함.</p></li>
+<li><p>HAL (TIM, UART 등) 설정 및 타이머 인터럽트 처리.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id5">
+<h2>사용 방법<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>코드 빌드 및 업로드</strong></p>
+<ul class="simple">
+<li><p>STM32CubeIDE에서 프로젝트를 열고 빌드 후 타겟 보드에 업로드합니다.</p></li>
+</ul>
+</li>
+<li><p><strong>UART 통신 설정</strong></p>
+<ul class="simple">
+<li><p>UART2를 사용하여 외부 시스템과 통신합니다.</p></li>
+<li><p>기본 버퍼 크기:</p>
+<ul>
+<li><p>RX: 24 바이트</p></li>
+<li><p>TX: 24 바이트</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>주요 명령 사용</strong></p>
+<ul class="simple">
+<li><p>시스템 초기화: <code class="docutils literal notranslate"><span class="pre">INIT_STATE</span></code> 모드</p></li>
+<li><p>속도 설정: <code class="docutils literal notranslate"><span class="pre">SET_SPEED</span></code> 모드</p></li>
+<li><p>브레이크 설정: <code class="docutils literal notranslate"><span class="pre">SET_BRAKE</span></code> 모드</p></li>
+<li><p>PID 파라미터 설정: <code class="docutils literal notranslate"><span class="pre">SET_PID</span></code> 모드</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h2>주의 사항<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>CRC 오류 처리</strong></p>
+<ul class="simple">
+<li><p>CRC 오류 발생 시, 오류 코드와 함께 재시도해야 합니다.</p></li>
+</ul>
+</li>
+<li><p><strong>모터 설정</strong></p>
+<ul class="simple">
+<li><p>ID를 기반으로 모터 제어를 수행하며, ID가 0일 경우 모든 모터에 명령이 적용됩니다.</p></li>
+</ul>
+</li>
+<li><p><strong>DMA 초기화</strong></p>
+<ul class="simple">
+<li><p>UART DMA 버퍼가 초기화되지 않은 경우, 수신 문제를 방지하기 위해 수동 초기화가 필요합니다.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h2>문의 및 수정<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>코드에 대한 추가 문의 사항은 프로젝트 담당자에게 연락하거나, 팀의 이슈 트래커를 통해 보고하시기 바랍니다.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Circuit.html" class="btn btn-neutral float-left" title="Circuit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Manipulator/Manipulator.html" class="btn btn-neutral float-right" title="Manipulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, URC-MR2 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
