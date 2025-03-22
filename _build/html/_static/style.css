@@ -1,0 +1,122 @@
+/* Custom styles for URC-MR2 website */
+
+/* Gallery styles */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item .content {
+    padding: 15px;
+}
+
+.gallery-item .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.gallery-item .description {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Video container styles */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Member card styles */
+.members-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.member-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px auto;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 15px;
+}
+
+.member-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.member-description {
+    font-size: 0.9em;
+    color: #444;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-item img {
+  height: 100px; /* 모든 로고의 높이를 50px로 통일 */
+  width: auto; /* 가로 비율은 자동으로 조정 */
+  padding: 10px;
+}
