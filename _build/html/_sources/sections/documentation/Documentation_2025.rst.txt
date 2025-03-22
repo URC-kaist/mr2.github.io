@@ -8,5 +8,5 @@ Documentation_2025
    :caption: 하위 컨텐츠
 
    Circuit
-   Manipulator
+   Manipulator/Manipulator
    Science

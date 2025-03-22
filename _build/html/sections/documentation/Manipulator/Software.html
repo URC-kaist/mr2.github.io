@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software &mdash; URC-MR2 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=82ea6441" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Science" href="../Science.html" />
+    <link rel="prev" title="Hardware" href="Hardware.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            URC-MR2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../what_is_urc.html">What is URC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../members/index.html">Members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rover/index.html">Rover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/index.html">Gallery</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../Documentation_2025.html">Documentation_2025</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Circuit.html">Circuit</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="Manipulator.html">Manipulator</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Hardware.html">Hardware</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Software</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Science.html">Science</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">URC-MR2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../Documentation_2025.html">Documentation_2025</a></li>
+          <li class="breadcrumb-item"><a href="Manipulator.html">Manipulator</a></li>
+      <li class="breadcrumb-item active">Software</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/sections/documentation/Manipulator/Software.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="software">
+<h1>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h1>
+<p>이곳은 Software 컨텐츠에 대한 설명입니다.</p>
+<p>이 문서는 <a href="#id1"><span class="problematic" id="id2">**</span></a>ROS2 Workspace for Robot Arm**에 대한 정보를 포함하며, 로봇팔 제어를 위한 각 패키지의 구성과 주요 명령어들을 정리합니다.</p>
+<section id="ros2-workspace-for-robot-arm">
+<h2>ROS2 Workspace for Robot Arm<a class="headerlink" href="#ros2-workspace-for-robot-arm" title="Link to this heading"></a></h2>
+<p>이 ROS2 작업공간은 로봇팔을 제어하기 위한 패키지들을 포함합니다.</p>
+<section id="id3">
+<h3>패키지 종류 요약<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+</section>
+<section id="ros">
+<h3>ROS 패키지 리스트<a class="headerlink" href="#ros" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>rover_arm_description</strong></p>
+<p>로봇의 URDF 모델을 포함하는 패키지로, Fusion 360을 사용하여 생성되었습니다.
+STL 파일과 충돌 모델(Collision body)이 포함되어 있습니다.</p>
+<p>원래 사용되던 <em>fusion2urdf-ros2</em> ( [fusion2urdf-ros2](<a class="reference external" href="https://github.com/dheena2k2/fusion2urdf-ros2">https://github.com/dheena2k2/fusion2urdf-ros2</a>) )는 동작하지 않아,
+[Robotizer-be의 fork](<a class="reference external" href="https://github.com/Robotizer-be/fusion2urdf-ros2">https://github.com/Robotizer-be/fusion2urdf-ros2</a>)를 사용합니다.</p>
+<p><strong>설정 전 필수 작업:</strong></p>
+<ol class="arabic">
+<li><p><strong>STL 파일 이름 수정</strong>
+<cite>meshes/</cite> 디렉토리 내의 STL 파일에서 자동 추가된 <cite>(1)</cite> 등의 문구를 제거합니다.
+예: <code class="docutils literal notranslate"><span class="pre">link1</span> <span class="pre">(1).stl</span></code> → <code class="docutils literal notranslate"><span class="pre">link1.stl</span></code></p></li>
+<li><p><strong>Launch 파일 수정</strong>
+<cite>launch/display.launch.py</cite> 파일에서 모델 경로를 아래와 같이 수정합니다:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">default_model_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pkg_share</span><span class="p">,</span> <span class="s1">&#39;urdf/rover_arm_macro.urdf.xacro&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Xacro 매크로 호출 위치 확인</strong>
+<cite>urdf/rover_arm_macro.urdf.xacro</cite> 파일의 마지막 부분(두 번째 줄 전)에 아래 코드를 추가합니다:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xacro:rover_arm</span><span class="w"> </span><span class="na">prefix=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>base_link Visual 미표시 문제 해결</strong>
+<cite>urdf/rover_arm_macro.urdf.xacro</cite> 파일에서 <cite>base_link</cite> 정의를 아래와 같이 수정합니다:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${prefix}base_link&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;visual&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0 0 0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;geometry&gt;</span>
+<span class="w">      </span><span class="nt">&lt;mesh</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;package://rover_arm_description/meshes/base_link.stl&quot;</span><span class="w"> </span><span class="na">scale=</span><span class="s">&quot;0.001 0.001 0.001&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/geometry&gt;</span>
+<span class="w">    </span><span class="nt">&lt;material</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;rover_arm_silver&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/visual&gt;</span>
+<span class="w">  </span><span class="nt">&lt;collision&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0 0 0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;geometry&gt;</span>
+<span class="w">      </span><span class="nt">&lt;mesh</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;package://rover_arm_description/meshes/base_link.stl&quot;</span><span class="w"> </span><span class="na">scale=</span><span class="s">&quot;0.001 0.001 0.001&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/geometry&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/collision&gt;</span>
+<span class="nt">&lt;/link&gt;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>URDF 모델 확인:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_description<span class="w"> </span>display.launch.py
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>rover_arm</strong></p>
+<p>원통형 URDF 모델을 포함한 패키지이나, 현재는 사용되지 않습니다.</p>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>URDF를 RViz에서 확인:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm<span class="w"> </span>display.launch.py
+</pre></div>
+</div>
+<p><em>(현재 실행되지 않음)</em></p>
+</li>
+<li><p>Joint 별 각도 설정 슬라이더 실행:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>joint_state_publisher_gui<span class="w"> </span>joint_state_publisher_gui
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>rover_arm_moveit_config</strong></p>
+<p><a href="#id4"><span class="problematic" id="id5">`</span></a>rover_arm`의 URDF를 기반으로 MoveIt 설정을 위한 패키지입니다.</p>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>MoveIt 설정 실행:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>moveit_setup_assistant<span class="w"> </span>setup_assistant.launch.py
+</pre></div>
+</div>
+<ul>
+<li><p>설정 전에 다음 명령어를 먼저 실행합니다:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>install/setup.bash
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>MoveIt 및 RViz 실행:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_moveit_config<span class="w"> </span>demo.launch.py
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>알려진 버그:</strong></p>
+<ol class="arabic simple">
+<li><p>새로 설정 후 <code class="docutils literal notranslate"><span class="pre">rover_arm_moveit_config/config/joint_limits.yaml</span></code> 파일에서 limit 값을 소수점 형식으로 수정해야 합니다.
+예시: <code class="docutils literal notranslate"><span class="pre">1</span></code> → <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></li>
+</ol>
+</li>
+<li><p><strong>rover_arm_moveit_cpp</strong></p>
+<p>MoveIt 관련 C++ 노드를 포함한 패키지입니다.</p>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>C++ 노드 실행:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>rover_arm_moveit_cpp<span class="w"> </span>hello_moveit
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="id6">
+<h2>추가 상세 내용<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>필요에 따라 각 패키지에 대한 추가 설명과 설정 방법을 보다 상세히 문서화할 수 있습니다.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Hardware.html" class="btn btn-neutral float-left" title="Hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Science.html" class="btn btn-neutral float-right" title="Science" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, URC-MR2 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
