@@ -7,6 +7,6 @@ Documentation_2025
    :maxdepth: 1
    :caption: 하위 컨텐츠
 
-   Circuit
+   Circuit/Circuit
    Manipulator/Manipulator
    Science
