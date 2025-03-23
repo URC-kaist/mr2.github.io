@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software &mdash; URC-MR2 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=82ea6441" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Science" href="../Science/Science.html" />
+    <link rel="prev" title="Hardware" href="Hardware.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            URC-MR2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../what_is_urc.html">What is URC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../members/index.html">Members</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Rover</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../rover_2025.html">rover_2025</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Circuit/Circuit.html">Circuit</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="Manipulator.html">Manipulator</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Hardware.html">Hardware</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Science/Science.html">Science</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rover_2026.html">rover_2026</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/index.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">Files</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">URC-MR2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Rover</a></li>
+          <li class="breadcrumb-item"><a href="../rover_2025.html">rover_2025</a></li>
+          <li class="breadcrumb-item"><a href="Manipulator.html">Manipulator</a></li>
+      <li class="breadcrumb-item active">Software</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/sections/rover/Manipulator/Software.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="software">
+<h1>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h1>
+<p>이 ROS2 작업공간은 로봇팔 제어를 위한 여러 패키지 및 설정 파일을 포함합니다.</p>
+<section id="id1">
+<h2>로봇팔 동작 실행 방법<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>로봇팔 초기 위치 설정(필수)</strong>
+- 전원을 켜기 전 로봇팔을 초기 위치로 이동시켜야 함.
+- 초기 위치 확인 방법: 로봇팔 연결 없이 MoveIt을 실행했을 때 RViz에서 표시되는 자세가 0도 위치.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_moveit_config<span class="w"> </span>servo.launch.py
+</pre></div>
+</div>
+</li>
+<li><p><strong>Xbox 컨트롤러 연결</strong></p></li>
+<li><p><strong>CAN 통신 Bitrate 설정</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>can0<span class="w"> </span>up<span class="w"> </span><span class="nb">type</span><span class="w"> </span>can<span class="w"> </span>bitrate<span class="w"> </span><span class="m">1000000</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Dynamixel (J6) latency timer 설정</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/bus/usb-serial/devices/ttyUSB0/latency_timer
+</pre></div>
+</div>
+</li>
+<li><p><strong>로봇팔 실행</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_moveit_config<span class="w"> </span>servo.launch.py
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h2>주의사항 및 개선 필요 사항<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>J1 발산 위험</strong>: 첫 실행 시, CAN 연결을 끊고 실행 (모터 전원 연결은 가능)</p></li>
+<li><p><strong>J4, J5 벨트 제거 후 실행 권장</strong>
+- 최초 실행 시 진동 발생 가능
+- 초기 위치가 잘못 설정되면 J4, J5가 360도 회전할 수 있음</p></li>
+<li><p><strong>동작 중 CAN 연결이 끊어지면 로봇 발산 위험 있음</strong></p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>패키지 요약<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+</section>
+<section id="id4">
+<h2>패키지 상세 설명<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>로봇의 URDF 모델을 포함하는 패키지로, Fusion 360을 사용하여 생성되었습니다.
+STL 파일과 충돌 모델(Collision body)이 포함되어 있습니다.</p>
+<p>원래 사용되던
+<a href="#id5"><span class="problematic" id="id6">``</span></a>fusion2urdf-ros2 &lt;<a class="reference external" href="https://github.com/dheena2k2/fusion2urdf-ros2">https://github.com/dheena2k2/fusion2urdf-ros2</a>&gt;`_
+는 동작하지 않아, 대신
+<a href="#id7"><span class="problematic" id="id8">``</span></a>Robotizer-be의 fork &lt;<a class="reference external" href="https://github.com/Robotizer-be/fusion2urdf-ros2">https://github.com/Robotizer-be/fusion2urdf-ros2</a>&gt;`_
+를 사용합니다.</p>
+<p><strong>설정 전 필수 작업:</strong></p>
+<ul>
+<li><p><strong>STL 파일명 정리</strong>: <cite>(1)</cite> 등의 문구 제거
+예: <code class="docutils literal notranslate"><span class="pre">link1</span> <span class="pre">(1).stl</span></code> → <code class="docutils literal notranslate"><span class="pre">link1.stl</span></code></p></li>
+<li><p><strong>Launch 파일 경로 수정</strong>: <a href="#id9"><span class="problematic" id="id10">``</span></a>display.launch.py``에서 경로 확인 및 수정</p></li>
+<li><p><strong>Xacro 매크로 호출 추가</strong>: <code class="docutils literal notranslate"><span class="pre">rover_arm_macro.urdf.xacro</span></code> 파일 끝부분에 아래 코드 추가</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;xacro:rover_arm</span><span class="w"> </span><span class="na">prefix=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>base_link 미표시 문제 해결</strong>: <code class="docutils literal notranslate"><span class="pre">base_link</span></code> 정의 수정</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;${prefix}base_link&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;visual&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0 0 0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;geometry&gt;</span>
+<span class="w">      </span><span class="nt">&lt;mesh</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;package://rover_arm_description/meshes/base_link.stl&quot;</span>
+<span class="w">            </span><span class="na">scale=</span><span class="s">&quot;0.001 0.001 0.001&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/geometry&gt;</span>
+<span class="w">    </span><span class="nt">&lt;material</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;rover_arm_silver&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/visual&gt;</span>
+<span class="w">  </span><span class="nt">&lt;collision&gt;</span>
+<span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">&quot;0 0 0&quot;</span><span class="w"> </span><span class="na">rpy=</span><span class="s">&quot;0 0 0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;geometry&gt;</span>
+<span class="w">      </span><span class="nt">&lt;mesh</span><span class="w"> </span><span class="na">filename=</span><span class="s">&quot;package://rover_arm_description/meshes/base_link.stl&quot;</span>
+<span class="w">            </span><span class="na">scale=</span><span class="s">&quot;0.001 0.001 0.001&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/geometry&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/collision&gt;</span>
+<span class="nt">&lt;/link&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>URDF 모델 확인</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_description<span class="w"> </span>display.launch.py
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>원통형 URDF 모델을 포함하는 패키지입니다. (현재 실행되지 않음)</p>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>URDF 확인</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm<span class="w"> </span>display.launch.py
+</pre></div>
+</div>
+</li>
+<li><p>Joint 별 각도 설정 슬라이더 실행</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>joint_state_publisher_gui<span class="w"> </span>joint_state_publisher_gui
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>MoveIt을 이용한 로봇팔 제어 및 설정 패키지입니다.</p>
+<p><strong>주요 명령어:</strong></p>
+<ul>
+<li><p>MoveIt 로봇팔 동작</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_moveit_config<span class="w"> </span>servo.launch.py
+</pre></div>
+</div>
+</li>
+<li><p>MoveIt 설정 실행</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>install/setup.bash
+ros2<span class="w"> </span>launch<span class="w"> </span>moveit_setup_assistant<span class="w"> </span>setup_assistant.launch.py
+</pre></div>
+</div>
+</li>
+<li><p>MoveIt 및 RViz 실행</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>launch<span class="w"> </span>rover_arm_moveit_config<span class="w"> </span>demo.launch.py
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>알려진 버그:</strong></p>
+<ul class="simple">
+<li><p>새로 설정 후 <code class="docutils literal notranslate"><span class="pre">rover_arm_moveit_config/config/joint_limits.yaml</span></code> 파일에서 limit 값을 소수점 형식으로 수정해야 함
+예시: <code class="docutils literal notranslate"><span class="pre">1</span></code> → <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></li>
+</ul>
+</li>
+<li><p>MoveIt 관련 C++ 노드를 포함하는 패키지입니다.</p>
+<p><strong>주요 명령어:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ros2<span class="w"> </span>run<span class="w"> </span>rover_arm_moveit_cpp<span class="w"> </span>hello_moveit
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Hardware.html" class="btn btn-neutral float-left" title="Hardware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Science/Science.html" class="btn btn-neutral float-right" title="Science" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, URC-MR2 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

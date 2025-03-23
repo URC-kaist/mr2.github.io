@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velocity Control STM32 &mdash; URC-MR2 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=82ea6441" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/design-tabs.js?v=36754332"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Manipulator" href="../Manipulator/Manipulator.html" />
+    <link rel="prev" title="Circuit" href="Circuit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            URC-MR2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../what_is_urc.html">What is URC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../members/index.html">Members</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Rover</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../rover_2025.html">rover_2025</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="Circuit.html">Circuit</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Velocity Control STM32</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">알고리즘</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Manipulator/Manipulator.html">Manipulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Science/Science.html">Science</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rover_2026.html">rover_2026</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery/index.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">Files</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">URC-MR2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Rover</a></li>
+          <li class="breadcrumb-item"><a href="../rover_2025.html">rover_2025</a></li>
+          <li class="breadcrumb-item"><a href="Circuit.html">Circuit</a></li>
+      <li class="breadcrumb-item active">Velocity Control STM32</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/sections/rover/Circuit/Velocity Control STM32.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="velocity-control-stm32">
+<h1>Velocity Control STM32<a class="headerlink" href="#velocity-control-stm32" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>기본 통신 설정<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Baudrate</strong>: 921600</p></li>
+<li><p><strong>CRC</strong>: CRC32 (Input/Output Reflected)</p></li>
+<li><p><strong>UART</strong>: UART2 사용</p></li>
+</ul>
+</section>
+<section id="uart">
+<h2>UART 통신 프로토콜<a class="headerlink" href="#uart" title="Link to this heading"></a></h2>
+<p>UART를 통해 다음과 같은 명령어 모드를 지원합니다:</p>
+<ul class="simple">
+<li><p><strong>INIT_STATE</strong>: 시스템 초기화</p></li>
+<li><p><strong>SET_SPEED</strong>: 모터 속도 설정</p></li>
+<li><p><strong>CURRENT_SPEED</strong>: 현재 속도 전송</p></li>
+<li><p><strong>SET_BRAKE</strong>: 브레이크 설정</p></li>
+<li><p><strong>SET_PID</strong>: PID 파라미터 설정</p></li>
+<li><p><strong>CURRENT_PID</strong>: 현재 PID 파라미터 전송</p></li>
+</ul>
+</section>
+<section id="crc">
+<h2>CRC 검증 방법<a class="headerlink" href="#crc" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>UART 데이터의 무결성 검증을 위한 CRC32 (input/output reflected) 사용</p></li>
+<li><p>CRC 오류 발생 시 오류 메시지를 반환하여 재시도 유도</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>코드 구성 요소<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>주요 파일:</p>
+<ul class="simple">
+<li><p><strong>UART_handler.cpp</strong>
+- UART 데이터 수신 및 패킷 파싱
+- 명령어 모드 처리 및 데이터 전송</p></li>
+<li><p><strong>Drive_system.cpp</strong>
+- PID 기반 모터 속도 및 브레이크 제어
+- 속도 측정 및 제어 로직 포함</p></li>
+<li><p><strong>real_main.cpp</strong>
+- 메인 진입점, 시스템 초기화 및 주 루프
+- HAL 설정 (TIM, UART 등) 및 인터럽트 처리</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>사용 방법<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>STM32CubeIDE에서 빌드 및 업로드</strong></p></li>
+<li><p><strong>UART 통신 설정</strong>
+- RX/TX 기본 버퍼 크기: 24 바이트</p></li>
+<li><p><strong>명령 사용 예시</strong>:</p>
+<ul class="simple">
+<li><p>시스템 초기화: <code class="docutils literal notranslate"><span class="pre">INIT_STATE</span></code></p></li>
+<li><p>속도 설정: <code class="docutils literal notranslate"><span class="pre">SET_SPEED</span></code></p></li>
+<li><p>브레이크 설정: <code class="docutils literal notranslate"><span class="pre">SET_BRAKE</span></code></p></li>
+<li><p>PID 설정: <code class="docutils literal notranslate"><span class="pre">SET_PID</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h2>주의 사항<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CRC 오류 발생 시 오류 코드 반환</p></li>
+<li><p>ID가 0이면 모든 모터에 적용</p></li>
+<li><p>DMA 초기화 미진 시 수신 오류 가능성</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>문의 및 수정<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>추가 문의 사항은 프로젝트 담당자 또는 팀 이슈 트래커를 활용 바랍니다.</p>
+</section>
+</section>
+<section id="id6">
+<h1>알고리즘<a class="headerlink" href="#id6" title="Link to this heading"></a></h1>
+<section id="rpm">
+<h2>RPM 측정 알고리즘<a class="headerlink" href="#rpm" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">DriveSystem</span></code> 클래스의 <code class="docutils literal notranslate"><span class="pre">measureRpm()</span></code> 함수가 RPM 측정을 담당합니다.</p>
+<ol class="arabic">
+<li><p><strong>DMA 입력 캡처 버퍼 사용</strong></p>
+<ul class="simple">
+<li><p>DMA가 버퍼(<code class="docutils literal notranslate"><span class="pre">m_icDataCh</span></code>)에 캡처 값을 순환 저장</p></li>
+<li><p>DMA의 <code class="docutils literal notranslate"><span class="pre">NDTR</span></code> 값으로 최근 측정 인덱스 식별</p></li>
+</ul>
+</li>
+<li><p><strong>주기(Δt) 계산</strong></p>
+<ul class="simple">
+<li><p>최근 인덱스와 이전 인덱스의 타이머 값 차이 계산</p></li>
+<li><p>Δt (초) = (현재 캡처 값 - 과거 캡처 값) / 타이머 주파수(<code class="docutils literal notranslate"><span class="pre">TIMER_FREQ</span></code>)</p></li>
+</ul>
+</li>
+<li><p><strong>주파수를 RPM으로 변환</strong></p>
+<div class="math notranslate nohighlight">
+\[RPM = \frac{60 \times f}{PULSE\_PER\_REV}\]</div>
+<ul class="simple">
+<li><p>예) 엔코더 1024 펄스/회전 시, <code class="docutils literal notranslate"><span class="pre">PULSE_PER_REV</span> <span class="pre">=</span> <span class="pre">1024</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>정지 상태 판정</strong></p>
+<ul class="simple">
+<li><p>DMA에 데이터 변화가 없거나 펄스 간격이 비정상이면 정지 상태로 판단</p></li>
+</ul>
+</li>
+</ol>
+<section id="id7">
+<h3>RPM 측정 코드<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">DriveSystem::measureRpm</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">ndtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">__HAL_DMA_GET_COUNTER</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m_hdmaIC</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">currentIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wrapIndex</span><span class="p">(</span><span class="n">IC_BUF_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ndtr</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">IC_BUF_SIZE</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">prevIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wrapIndex</span><span class="p">(</span><span class="n">currentIndex</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">IC_BUF_SIZE</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">currentTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_icDataCh</span><span class="p">[</span><span class="n">currentIndex</span><span class="p">];</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">prevTime</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">m_icDataCh</span><span class="p">[</span><span class="n">prevIndex</span><span class="p">];</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">prevTime</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">currentTime</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">prevTime</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">TIMER_FREQ</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0.0f</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">isZeroSpeedDetected</span><span class="p">(</span><span class="n">currentIndex</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">))</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">rpm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">60.0f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">frequency</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">PULSE_PER_REV</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rpm</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>정지 상태 검출 코드<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">DriveSystem::isZeroSpeedDetected</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">currentIndex</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">threshold</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_icDataCh</span><span class="p">[</span><span class="n">m_prev_index</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">m_icDataCh</span><span class="p">[</span><span class="n">currentIndex</span><span class="p">])</span>
+<span class="w">        </span><span class="n">m_zero_sampling_stack</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">m_zero_sampling_stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m_zero_sampling_stack</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">m_prev_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">currentIndex</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 추가 펄스 간격 비정상 여부 체크 로직</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="stm32">
+<h2>STM32 타이머 설정<a class="headerlink" href="#stm32" title="Link to this heading"></a></h2>
+<section id="tim2">
+<h3>TIM2 설정<a class="headerlink" href="#tim2" title="Link to this heading"></a></h3>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">MX_TIM2_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">htim2</span><span class="p">.</span><span class="n">Instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">htim2</span><span class="p">.</span><span class="n">Init</span><span class="p">.</span><span class="n">Prescaler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1700</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 예: 170 MHz → 100 kHz (10 µs)</span>
+<span class="w">    </span><span class="n">htim2</span><span class="p">.</span><span class="n">Init</span><span class="p">.</span><span class="n">CounterMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_COUNTERMODE_UP</span><span class="p">;</span>
+<span class="w">    </span><span class="n">htim2</span><span class="p">.</span><span class="n">Init</span><span class="p">.</span><span class="n">Period</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4294967295</span><span class="p">;</span>
+<span class="w">    </span><span class="n">htim2</span><span class="p">.</span><span class="n">Init</span><span class="p">.</span><span class="n">ClockDivision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TIM_CLOCKDIVISION_DIV1</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// Input Capture 설정, 양쪽 엣지 감지</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="pwm">
+<h3>PWM 타이머 설정<a class="headerlink" href="#pwm" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>TIM1, TIM4 등 PWM 모드 설정</p></li>
+<li><p>PWM 듀티 사이클 변경으로 모터 속도 및 방향 제어</p></li>
+</ul>
+</section>
+</section>
+<section id="id9">
+<h2>결론<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>입력 캡처 + DMA로 정확한 RPM 측정</p></li>
+<li><p>PID 제어를 통한 정밀한 모터 제어</p></li>
+<li><p>타이머 설정을 통해 효율적이고 정확한 속도 제어 구현</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Circuit.html" class="btn btn-neutral float-left" title="Circuit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Manipulator/Manipulator.html" class="btn btn-neutral float-right" title="Manipulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, URC-MR2 Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
