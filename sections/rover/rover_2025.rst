@@ -1,12 +1,12 @@
-2025 Rover
-==========
+rover_2025
+=======
+
+이곳은 rover_2025 항목에 대한 설명입니다.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: 하위 컨텐츠
 
-   science_2025
-   driving_2025
-   robot_arm_2025
-   autonomous_2025
-   design_2025
+   Circuit/Circuit
+   Manipulator/Manipulator
+   Science/Science
