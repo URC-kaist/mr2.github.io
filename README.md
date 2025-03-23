@@ -1,3 +1,7 @@
+# We moved to [](https://github.com/URC-kaist/urc-kaist.github.io)
+
+
+
 # URC-KAIST MR2 웹사이트
 
 공식 웹사이트: https://urc-kaist.github.io/mr2.github.io/
